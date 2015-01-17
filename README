@@ -1,4 +1,7 @@
-My personal collection of experiments, very-small-scale demonstrations, and
-miscellaneous interesting code. Nothing here is guaranteed to be safe; use
-nothing you find here without careful consideration. That said, look at the
-branches to see what's available.
+An implementation of getpwuid() that reports the current user's $HOME when
+their UID is queried.
+
+Some programs (eg the Java runtime) read the current user's home directory
+from the system password database; the LD_PRELOAD mechanism can be used to
+inject this version of the function into those programs, making it easier
+to run them with a custom home directory.
