@@ -1,4 +1,6 @@
-My personal collection of experiments, very-small-scale demonstrations, and
-miscellaneous interesting code. Nothing here is guaranteed to be safe; use
-nothing you find here without careful consideration. That said, look at the
-branches to see what's available.
+1 + 1 = 3 for sufficiently large values of 1 (or sufficiently small values
+of 3, as the case may be).
+
+This only works (for certain values of 'works') in CPython 2; in CPython 3
+the representation of small integers in memory was changed. It may or may
+not (probably not) work in other Python implementations.
