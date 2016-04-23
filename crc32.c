@@ -8,14 +8,13 @@ uint32_t crc32(const void *buf, size_t size, uint32_t crc)
         const uint8_t *b = buf;
         size_t i, j;
         for (i = 0; i < size; ++i) {
+                crc ^= *b++;
                 for (j = 0; j < 8; ++j) {
                         if (crc & 1) {
                                 crc >>= 1;
-                                crc ^= (uint32_t)b[i] << (31 - j) & 0x80000000;
                                 crc ^= P;
                         } else {
                                 crc >>= 1;
-                                crc ^= (uint32_t)b[i] << (31 - j) & 0x80000000;
                         }
                 }
         }
