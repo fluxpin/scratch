@@ -10,12 +10,7 @@ uint32_t crc32(const void *buf, size_t size, uint32_t crc)
         for (i = 0; i < size; ++i) {
                 crc ^= *b++;
                 for (j = 0; j < 8; ++j) {
-                        if (crc & 1) {
-                                crc >>= 1;
-                                crc ^= P;
-                        } else {
-                                crc >>= 1;
-                        }
+                        crc = crc >> 1 ^ (crc & 1) * P;
                 }
         }
         return crc;
