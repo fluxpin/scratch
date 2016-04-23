@@ -4,7 +4,7 @@
 #include "crc32.h"
 
 static const char test[] = "123456789";
-static const uint32_t crc = 0x58E3FA20;
+static const uint32_t crc = 0xE3069283;
 
 int main(void)
 {
