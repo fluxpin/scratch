@@ -1,0 +1,27 @@
+#!/bin/sh
+
+mkdir -p build || exit
+cd build || exit
+
+cat << 'EOF' > Makefile || exit
+CC ?= gcc
+CFLAGS ?= -O2 -march=native -pipe
+
+CPPFLAGS += -I. $(patsubst %,-I%,$(VPATH))
+
+include ../deps.mk
+
+%: %.o
+	$(CC) $(CFLAGS) $^ -o $@
+
+%.o: %.c
+	$(CC) $(CFLAGS) $(CPPFLAGS) -c -o $@ $<
+
+clean:
+	rm -rf ../build
+
+.PHONY: all clean
+.SECONDARY: # Keep intermediate files
+EOF
+
+exec "${MAKE:-make}" -Rr "$@"

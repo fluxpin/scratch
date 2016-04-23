@@ -1,4 +1,20 @@
-My personal collection of experiments, very-small-scale demonstrations, and
-miscellaneous interesting code. Nothing here is guaranteed to be safe; use
-nothing you find here without careful consideration. That said, look at the
-branches to see what's available.
+p = 0x7 = 0111
+m = 0x1B = 0001 1011
+
+0000 < 0
+0000 < 0
+0000 < 0
+0000 < 1
+0001 < 1
+0011 < 0
+0110 < 1
+1101 < 1
+1011 ^ 0111
+1100 < 0
+1000 ^ 0111
+1111 < 0
+1110 ^ 0111
+1001 < 0
+0010 ^ 0111
+0101 < 0
+1010 = 0xA
