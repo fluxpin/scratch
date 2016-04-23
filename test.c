@@ -8,6 +8,7 @@ static const uint32_t crc = 0x58E3FA20;
 
 int main(void)
 {
+        crc32_table();
         printf("%" PRIX32 " -> %" PRIX32 "\n",
                crc,
                crc32(test, sizeof(test) - 1, 0));
