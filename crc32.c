@@ -24,9 +24,7 @@ uint32_t crc32(const void *buf, size_t size, uint32_t crc)
 {
         const uint8_t *b = buf;
         crc = ~crc;
-        while (size--) {
-                crc ^= *b++;
-                crc = crc >> 8 ^ CRC32[crc & 0xFF];
-        }
+        while (size--)
+                crc = crc >> 8 ^ CRC32[(crc ^ *b++) & 0xFF];
         return ~crc;
 }
